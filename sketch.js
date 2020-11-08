@@ -1,5 +1,5 @@
 var Paper,groundSprite
-var BoxSide1, BoxSide2
+var Bin1
 
 const Engine = Matter.Engine;
 const World = Matter.World;
@@ -26,13 +26,16 @@ function setup() {
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
 	 World.add(world, ground);
 	 
-	 BoxSide1Sprite = createSprite(60,10,10,50);
+	 BoxSide1Sprite = createSprite(450,650,10,50);
 	 BoxSide1Sprite.shapeColor=color(255);
 	 BoxSide1 = Bodies.rectangle(60,10,10,50,{isStatic:true});
 
-	 BoxSide2Sprite = createSprite(550,10,10,50);
-	 BoxSide1Sprite.shapeColor=color(255);
+
+	 BoxSide2Sprite = createSprite(650,650,10,50);
+	 BoxSide2Sprite.shapeColor=color(255);
 	 BoxSide2 = Bodies.rectangle(550,10,10,50,{isStatic:true});
+
+	 Bin1 = new Bin(1200,650);
 
 
 
@@ -49,6 +52,7 @@ function draw() {
   
   drawSprites();
  Paper.display();
+ Bin1.display();
 }
 
 function keyPressed(){
